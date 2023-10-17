@@ -13,7 +13,7 @@ struct node dummy;
 void ins_strt()
      {  int data;
 	struct node *temp;
-	printf("\nenter the value to input : ");
+	printf("\n Enter the value to input : ");
 	scanf("%d",&data);
 	temp=(struct node*)malloc(sizeof(dummy));
 	temp->data=data;
@@ -121,17 +121,16 @@ void ins_pos()
      {
 	int data,pos,i;
 	struct node *ptr,*swap,*temp,*nexxt;
-	printf("\nenter the value to input : ");
+	printf("\n Enter the value to input : ");
 	scanf("%d",&data);
-	printf("\n enter the possition");
+	printf("\n enter the position");
 	scanf("%d",&pos);
 	temp=(struct node*)malloc(sizeof(dummy));
 	temp->data=data;
 	temp->next=NULL;
 	if(head==NULL)
 	  {
-		printf("noooooooooooooooooooooooooooo");
-	    head=temp;
+		head=temp;
 		temp->prev=NULL;
 		temp->next=NULL;
 		end=temp;
@@ -270,7 +269,7 @@ int main()
 {
 	int choice;
 	do{
-	    printf("\n 1.add at start\n 2.add at end\n 3.display\n 4.display from end \n 5.insertion at possition\n 6.delection at start\n 7.delection at end\n 8.Delection at position \n 9.Search \n 10.exit");
+	    printf(" \n 1.insert at start \n 2.insert at end \n 3.insertion at position \n 4.delete at start \n 5.delete at end \n 6.delection at position \n 7.display \n 8.Display in reverse \n 9.Search \n 10.exit");
 	    printf("\n Enter your choice : ");
 	    scanf("%d",&choice);
 	    switch(choice)
@@ -278,19 +277,19 @@ int main()
 			case 1 :ins_strt();
 				break;
 
-			case 2 : ins_end();
+			case 2 :ins_end();
 				break;
-			case 3 :display();
+			case 3:ins_pos();
 				break;
-			case 4:dis_from_end();
+			case 4:dlt_strt();
 				break;
-			case 5:ins_pos();
+			case 5:dlt_end();
 				break;
-			case 6:dlt_strt();
+			case 6:dlt_pos();
 				break;
-			case 7:dlt_end();
+			case 7 :display();
 				break;
-			case 8:dlt_pos();
+			case 8:dis_from_end();
 				break;
 			case 9:
 				search();
