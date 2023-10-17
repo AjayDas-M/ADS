@@ -26,6 +26,33 @@ void deleteatfront()
 	return;
 }
 
+void search()
+{
+	struct node *temp;
+	int item,flag=0,i=1;
+	printf("Enter the item to be searched : ");
+	scanf("%d",&item);
+	temp=head;
+	while((temp->next!=NULL || temp->next==NULL)&& flag==0)
+	{
+		if(temp->data==item)
+		{
+			flag++;
+		}
+		else
+		{
+			temp=temp->next;
+			i++;
+		}
+	}
+	if(flag==1)
+	{
+		printf("item found at postiton %d",i);
+	}
+	else
+		printf("Item not found!!!");
+}
+
 void insertatfront()
 {
 	int data;
@@ -53,7 +80,7 @@ int main()
 	int ch;
 	do
 	{
-		printf("\n 1. insertion \n 2. deletion \n 3. display \n 4. exit\n ");
+		printf("\n 1. insertion \n 2. deletion \n 3. display \n 4.Search \n 5. exit\n ");
 		printf("enter your choice: ");
 		scanf("%d",&ch);
 		switch(ch)
@@ -68,6 +95,9 @@ int main()
 			display();
 			break;
 		 case 4:
+		 	search();
+		 	break;
+		 case 5:
 			exit(0);
 		default: 
 			printf("wrong option");
